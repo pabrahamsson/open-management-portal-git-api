@@ -2,6 +2,9 @@ apiVersion: infinispan.org/v1
 kind: Infinispan
 metadata:
   name: omp-cache
+  {{- if .Values.namespace }}
+  namespace: {{ .Values.namespace }}
+  {{- end }}
 spec:
   replicas: 1
   image: infinispan/server:10.1

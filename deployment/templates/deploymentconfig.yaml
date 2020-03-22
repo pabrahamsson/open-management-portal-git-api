@@ -4,6 +4,9 @@ metadata:
   labels:
     app: {{ .Values.name }}
   name: {{ .Values.name }}
+  {{- if .Values.namespace }}
+  namespace: {{ .Values.namespace }}
+  {{- end }}
 spec:
   replicas: 1
   revisionHistoryLimit: 10
