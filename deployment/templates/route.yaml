@@ -8,6 +8,9 @@ metadata:
   namespace: {{ .Values.namespace }}
   {{- end }}
 spec:
+  {{- if .Values.hostname }}
+  host: {{ .Values.hostname }}
+  {{- end }}
   port:
     targetPort: "{{ .Values.servicePort }}-tcp"
   tls:
